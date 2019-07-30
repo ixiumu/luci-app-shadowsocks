@@ -69,7 +69,7 @@ get_server_real_ip() {
         if [[ "$ip" = "$1" ]]; then
                 echo $ip
         else
-                echo $(nslookup "$1" | awk '/^Address\s1: / { print $3 }')
+                echo $(nslookup "$1" | awk '/^Address( 1)?: / { print $3 }')
         fi
 }
 
